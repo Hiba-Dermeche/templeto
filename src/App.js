@@ -1,6 +1,9 @@
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom"
 import "./App.css"
 import { Container} from "./components/index"
-import {Header, Hero, Footer,MostPopular} from "./sections/index"
+
+import {Home,Profile} from "./Pages/index"
+import {Header, Footer} from "./sections/index"
 
 
 
@@ -8,12 +11,21 @@ import {Header, Hero, Footer,MostPopular} from "./sections/index"
 const App = ()=>{
     return(
         <>
+        <Router>
             <Header/>
-            <Container>
-                <Hero/>
-                <MostPopular/>
-            </Container>
-            <Footer/>
+              <Container>
+                <Routes>
+                    <Route path="/" element={<Home/>}/>
+                    <Route path="/Profile" element={<Profile/>}/>
+                
+                </Routes>
+              
+              </Container>
+
+
+        </Router>
+        
+            
 
         </>
         
